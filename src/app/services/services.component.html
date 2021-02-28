@@ -1,0 +1,81 @@
+<!-- /**
+ * Title: services.component.html
+ * Author: Sarah Massie
+ * Date: 23 February 2021
+ * Description: Service parent component
+*/ -->
+
+<!-- select services -->
+<mat-card class='mat-elevation-z0'>
+
+  <!-- Mat card title -->
+  <mat-card-title>
+    Services:
+  </mat-card-title>
+
+  <br>
+
+  <mat-card-content>
+
+        <div
+
+        fxLayout="column">
+
+        <mat-list>
+          <mat-list-item *ngFor="let service of services">
+            <mat-checkbox name="" id="" totalValue="" [(ngModel)]="service.isChecked" (change)="changeSelection()">
+              {{ service.name }} {{ service.price | currency }}
+            </mat-checkbox>
+          </mat-list-item>
+        </mat-list>
+
+        </div>
+
+        <br />
+
+        </mat-card-content>
+      </mat-card>
+
+<h2 class="heading">Additional Parts and Labor</h2>
+
+        <div fxLayout="column" class="input">
+
+          <mat-list>
+            <mat-list-item>
+              <mat-label class="input">Cost of Parts:
+              <input
+              type="number"
+              matInput [(ngModel)]="partsCost"
+              placeholder="Enter Parts Value"
+              required />
+              </mat-label>
+            </mat-list-item>
+          </mat-list>
+
+          <mat-list>
+            <mat-list-item>
+              <mat-label class="input">Cost of Labor:
+              <input
+              type="number"
+              matInput [(ngModel)]="laborCost"
+              placeholder="Enter Hours of Labor"
+              required />
+              </mat-label>
+            </mat-list-item>
+          </mat-list>
+
+          <p style="padding-left: 17px; font-size: 10px;">Cost of labor is $50/hr per extra hour of labor.</p>
+
+        </div>
+
+          <br />
+
+          <div>
+            <mat-divider></mat-divider>
+          </div>
+
+          <br />
+
+  <mat-card-actions style="text-align: right">
+    <button mat-raised-button color="accent" (click)="onSubmit()">Submit Order</button>
+  </mat-card-actions>

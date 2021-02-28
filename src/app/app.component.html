@@ -1,0 +1,38 @@
+<!-- /**
+ * Title: app.component.html
+ * Author: Sarah Massie
+ * Date: 23 February 2021
+ * Description: App parent component
+*/ -->
+
+<mat-toolbar class="toolbar" color='primary'>
+  <mat-toolbar-row>
+
+    <div>
+      <div fxLayout="row wrap" fxLayoutAlign="end start" data-test="navBar">
+        <button mat-button routerLink="/services">Services</button>
+        <button mat-button routerLink="/about">About Us</button>
+        <button mat-button routerLink="/contact">Contact Us</button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<br>
+<div fxLayout="row wrap">
+  <div fxFlex>
+
+      <!-- this will tell Angular flex-layout that this is a flex element under a flex-row-->
+    <mat-card class="main-container" style="width: 70%; margin: 0px 150px; padding: 30px;" >
+      <mat-card-title class="title">{{ assignment }}</mat-card-title>
+
+      <br>
+      <hr>
+      <br>
+
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

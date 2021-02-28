@@ -1,0 +1,49 @@
+<!-- /**
+ * Title: invoice-dialog.component.html
+ * Author: Sarah Massie
+ * Date: 23 February 2021
+ * Description: Home parent component
+*/ -->
+
+<mat-dialog-content class="mat-elevation-z0">
+  <div fxFlex>
+      <mat-card class="mat-elevation-z0">
+
+        <!-- Title of invoice card that will display selected services -->
+        <mat-card-title>Order Invoice</mat-card-title>
+        <hr>
+      <br>
+
+      <mat-card-content>
+
+        <h4>Order Date: {{ orderDate | date }}</h4>
+        <!-- Here, the selected services from checked checkboxes will appear with their price -->
+        <div>
+          <mat-list *ngFor="let service of selectedServices">
+            <mat-list-item>
+              {{ service.name }} {{ service.price | currency }}
+            </mat-list-item>
+          </mat-list>
+
+          <mat-list>
+            <mat-list-item>
+              Cost of Parts: {{ partsCost | currency }}
+            </mat-list-item>
+            <mat-list-item>
+              Cost of Labor: {{ laborCost | currency }}
+            </mat-list-item>
+          </mat-list>
+          <br>
+
+        <mat-divider></mat-divider>
+        <br>
+
+      <h2>Total: {{ total + laborCost + partsCost | currency }}</h2>
+
+  </div>
+
+
+  <!-- The confirm button will close the invoice card -->
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary" mat-dialog-close>Confirm</button>
+  </mat-dialog-actions>
