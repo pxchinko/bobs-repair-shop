@@ -24,16 +24,16 @@ const routes: Routes = [
     ],
   },
   {
-    path: '**',
-    component: NotFoundComponent
-  },
-  {
     path: 'contact',
     component: ContactComponent
   },
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   },
 ];
 
